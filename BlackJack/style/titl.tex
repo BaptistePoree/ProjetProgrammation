@@ -1,0 +1,20 @@
+%\newcommand{\VRule}{\rule[-10cm]{.5mm}{10cm}}
+\newcommand{\VRule}{\rule{5cm}{.5mm}}
+\newcommand{\blap}[1]{\vbox to 0pt{#1\vss}}
+
+
+\newcommand\AtUpperLeftCorner[3]{%
+	\put(\LenToUnit{#1},\LenToUnit{\dimexpr\paperheight-#2}){\blap{#3}}%
+}
+\newcommand\AtUpperRightCorner[3]{%
+	\put(\LenToUnit{\dimexpr\paperwidth-#1},\LenToUnit{\dimexpr\paperheight-#2}){\blap{\llap{#3}}}%
+}	
+
+
+\title{\LARGE{Projet\\ BlackJack}}
+\author{\textsc{POREE} Baptiste}
+\newcommand{\ecole}[1]{\LARGE{Independant}}%
+\newcommand{\anneUniver}[1]{\large{Année de Céation du Projet #1}}%
+\newcommand{\diplome}[1]{\large{#1}}%
+\date{\today}
+\makeatletter

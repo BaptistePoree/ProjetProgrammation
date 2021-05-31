@@ -1,0 +1,88 @@
+
+\definecolor{noirBleu}{rgb}{0.12,0.47,0.87}
+\definecolor{noirBleuClaire}{rgb}{0.12,0.75,0.87}
+\definecolor{noirBleuFonser}{rgb}{0.12,0.40,0.87}
+\definecolor{noirViole}{rgb}{0.60,0.60,0.87}
+
+\titleformat{\part}
+	{\gdef \chapterlabel{}
+		\normalfont\sffamily\Huge\bfseries\scshape}
+	{\gdef \chapterlabel{} }{0pt}
+	{\begin{center} \begin{tikzpicture}[remember picture,overlay]
+		\node[yshift=-10cm] at (current page.north west)
+		{\begin{tikzpicture}[remember picture, overlay]
+			\fill [color=gray!20] (21.5,10)  -- (0,10)  -- (0,0) -- cycle;
+			\fill [color=gray!20] (21.5,-19.7) -- (0,-19.7) -- (21.5,-8) -- cycle;
+			\node[anchor=south,xshift=0.50\paperwidth,yshift=-0.2\paperwidth,rectangle,
+			rounded corners=25pt,inner sep=21pt,
+			fill=noirBleu,
+			rotate=25]
+			{\color{white} \bfseries #1};
+		\end{tikzpicture}
+		};  
+	\end{tikzpicture} \end{center}
+	\thispagestyle{empty}
+	}
+	
+\titleformat{\chapter}
+	{\gdef \chapterlabel{}
+		\normalfont\sffamily\Huge\bfseries\scshape}
+	{\gdef \chapterlabel{\thechapter)\ } }{0pt}
+	{\begin{tikzpicture}[remember picture,overlay]
+		\node[yshift=-10cm] at (current page.north west)
+		{\begin{tikzpicture}[remember picture, overlay]
+			\fill [color=gray!20] (21.5,10)  -- (0,10)  -- (0,0) -- cycle;
+			%\fill [color=gray!20] (21.5,10)  -- (0,10)  -- (21.5,7.5) -- cycle;
+			\node[anchor=south,xshift=0.5\paperwidth,yshift=0.15\paperwidth,rectangle,
+			rounded corners=25pt,inner sep=21pt,
+			fill=noirBleuClaire,
+			rotate=0]
+			{\color{white} \chapterlabel #1};
+			\end{tikzpicture}
+		};  
+	\end{tikzpicture}
+	}
+	
+\titleformat{\section}[display] 
+	{\fontsize{17pt}{12pt}\selectfont \bfseries}
+	{\textcolor{noirBleuFonser} 
+		{\thesection : #1}}
+	{0pt}
+	{\Huge}
+\titleformat{name=\section,numberless}[display] 
+	{\fontsize{17pt}{12pt}\selectfont \bfseries}
+	{\textcolor{noirBleuFonser} 
+		{#1}}
+	{0pt}
+	{\Huge}	
+	
+\titleformat{\subsection}[display] 
+	{\fontsize{17pt}{12pt}\selectfont \bfseries}
+	{\textcolor{noirBleuFonser} 
+		{\thesubsection : #1}}
+	{0pt}
+	{\Huge}
+\titleformat{name=\subsection,numberless}[display] 
+	{\fontsize{17pt}{12pt}\selectfont \bfseries}
+	{\textcolor{noirBleuFonser} 
+		{#1}}
+	{0pt}
+	{\Huge}	
+
+\titleformat{\subsubsection}[display] 
+	{\fontsize{17pt}{12pt}\selectfont \bfseries}
+	{\textcolor{noirBleuFonser} 
+		{\thesubsubsection : #1}}
+	{0pt}
+	{\Huge}
+\titleformat{name=\subsubsection,numberless}[display] 
+	{\fontsize{17pt}{12pt}\selectfont \bfseries}
+	{\textcolor{noirBleuFonser} 
+		{#1}}
+	{0pt}
+	{\Huge}	
+	
+	
+\titlespacing{\section}      {5pt}{20pt}{5pt}
+\titlespacing{\subsection}   {5pt}{20pt}{5pt}
+\titlespacing{\subsubsection}{5pt}{20pt}{5pt}

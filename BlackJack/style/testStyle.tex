@@ -1,0 +1,82 @@
+%% Informations générales
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{testStyle}[2019/01/09 classe personell, v1.0]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%         gemeral         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%style pecial
+	\RequirePackage{graphicx} % affichage des images
+	\RequirePackage{url} % affichage les lien
+	\RequirePackage{verbatim} % insérer un texte tel quel sans que LaTeX ne le traite
+	\RequirePackage{textcomp} % Caracteres additionnels
+	\RequirePackage{color, xcolor} % Les couleurs
+
+%en plus
+	\RequirePackage{float} % pour gérer les positionnement d'images
+	\RequirePackage[colorinlistoftodos]{todonotes} % pour gérer les positionnement d'images
+	\RequirePackage{array, tabularx} % pour la mise en page des tableaux
+	\RequirePackage{setspace} % espacement entre les lignes
+	\RequirePackage{abstract} % modifier la mise en page de l'abstract
+	\RequirePackage{subfig} % Pour les galerie d'images
+	\RequirePackage{geometry} % configuration des marges 
+	\RequirePackage{lipsum} % base
+	\RequirePackage{makeidx} % Pour faire un index a la fin du document %% pas encore tester 
+	\makeindex
+
+%Mathematique
+	\RequirePackage{lmodern}
+	\RequirePackage{amsmath,amsfonts,amssymb}
+	\RequirePackage[nottoc, notlof, notlot]{tocbibind}
+	\RequirePackage{kpfonts} % claigraphi et symbole mathematique
+	
+	\RequirePackage{multicol} % multicolonne
+%	\RequirePackage{fullpage, eso-pic} % Pour la page de garde
+	\RequirePackage[explicit]{titlesec} % les titre et chapitre (mise en place et modification des structure de latex)
+	\RequirePackage{tikz} % pour les figures
+
+%Autre
+	\RequirePackage{mdframed}%encadrement
+	\RequirePackage{pstricks}
+	\RequirePackage{lipsum}
+	\RequirePackage[amsthm,amsmath,hyperref,thmmarks]{ntheorem} % theorm
+	\RequirePackage{thmbox}
+	\RequirePackage{amsthm} % Pour utiliser newtheorem
+	\RequirePackage[most]{tcolorbox} % theorm
+	\RequirePackage{listings}
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%           algo          %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\RequirePackage{listings}
+\RequirePackage[linesnumbered,ruled,french,onelanguage]{algorithm2e} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%           code          %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\RequirePackage{listings}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%           tkiz          %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\RequirePackage{tikz} % pour les figures
+\usetikzlibrary{fit,shapes}%pour les bule
+\usetikzlibrary{arrows,snakes,shapes}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      Mathematique       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\R}{\mathbb{R} }
+\newcommand{\Q}{\mathbb{Q} }
+\newcommand{\C}{\mathbb{C} }
+\newcommand{\N}{\mathbb{N} }
+\newcommand{\Z}{\mathbb{Z} }
+\newcommand{\Union}{\cup }
+\newcommand{\Inter}{\cap }
+\newcommand{\Ensemble}{ensemble}
+\newcommand{\SEnsemble}{sous-ensemble}

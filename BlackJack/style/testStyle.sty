@@ -1,0 +1,114 @@
+%% Informations générales
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{testStyle}[2019/01/09 classe personell, v1.0]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%         gemeral         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%style pecial
+	\RequirePackage{graphicx} % affichage des images
+	\RequirePackage{url} % affichage les lien
+	\RequirePackage{verbatim} % insérer un texte tel quel sans que LaTeX ne le traite
+	\RequirePackage{textcomp} % Caracteres additionnels
+	\RequirePackage{color, xcolor} % Les couleurs
+
+%en plus
+	\RequirePackage{float} % pour gérer les positionnement d'images
+	\RequirePackage[colorinlistoftodos]{todonotes} % pour gérer les positionnement d'images
+	\RequirePackage{array, tabularx} % pour la mise en page des tableaux
+	\RequirePackage{setspace} % espacement entre les lignes
+	\RequirePackage{abstract} % modifier la mise en page de l'abstract
+	\RequirePackage{subfig} % Pour les galerie d'images
+	\RequirePackage{geometry} % configuration des marges 
+	\RequirePackage{lipsum} % base
+	\RequirePackage{makeidx} % Pour faire un index a la fin du document %% pas encore tester 
+	\makeindex
+	
+%Mathematique
+	\RequirePackage{lmodern}
+	\RequirePackage{amsmath,amsfonts,amssymb}
+	\RequirePackage[nottoc, notlof, notlot]{tocbibind}
+	\RequirePackage{kpfonts} % claigraphi et symbole mathematique
+	
+	\RequirePackage{multicol} % multicolonne
+	\RequirePackage{fullpage, eso-pic} % Pour la page de garde
+	\RequirePackage[explicit]{titlesec} % les titre et chapitre (mise en place et modification des structure de latex)
+	\RequirePackage{tikz} % pour les figures
+	
+%Autre
+	\RequirePackage{mdframed}%encadrement
+	\RequirePackage{pstricks}
+	\RequirePackage{lipsum}
+	\RequirePackage[amsthm,amsmath,hyperref,thmmarks]{ntheorem} % theorm
+	\RequirePackage{thmbox}
+	\RequirePackage{amsthm} % Pour utiliser newtheorem
+	\RequirePackage[most]{tcolorbox} % theorm
+	\RequirePackage{listings}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%           algo          %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Pour l'algo 
+\newif\if@algo \@algofalse %% si c'est faux
+	\DeclareOption{algo}{\@algotrue}
+	\DeclareOption*{}%% Ne rien faire quand une option est inconnue
+	\ProcessOptions
+\if@algo %% si c'est bon 
+	\RequirePackage{listings}
+	\RequirePackage[linesnumbered,ruled,french,onelanguage]{algorithm2e} 
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%           code          %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Pour code
+\newif\if@code \@codefalse %% si c'est faux
+	\DeclareOption{code}{\@codetrue}
+	\DeclareOption*{}%% Ne rien faire quand une option est inconnue
+	\ProcessOptions
+\if@code %% si c'est bon 
+	\RequirePackage{listings}
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%           tkiz          %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Pour tkiz %% Voir autrerment faire
+\newif\if@tk \@tkfalse %% si c'est faux
+	\DeclareOption{tk}{\@tktrue}
+	\DeclareOption*{}%% Ne rien faire quand une option est inconnue
+	\ProcessOptions
+\if@tk %% si c'est bon 
+	\RequirePackage{tikz} % pour les figures
+	\usetikzlibrary{fit,shapes}%pour les bule
+	\usetikzlibrary{arrows,snakes,shapes}
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      Mathematique       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Pour Math plus facile a taper 
+\newif\if@mt \@mtfalse %% si c'est faux
+	\DeclareOption{mt}{\@mttrue}
+	\DeclareOption*{}%% Ne rien faire quand une option est inconnue
+	\ProcessOptions
+\if@mt %% si c'est bon 
+	
+	\newcommand{\R}{\mathbb{R} }
+	\newcommand{\Q}{\mathbb{Q} }
+	\newcommand{\C}{\mathbb{C} }
+	\newcommand{\N}{\mathbb{N} }
+	\newcommand{\Z}{\mathbb{Z} }
+	\newcommand{\Union}{\cup }
+	\newcommand{\Inter}{\cap }
+	\newcommand{\Ensemble}{ensemble}
+	\newcommand{\SEnsemble}{sous-ensemble}
+\fi
+
+%% Fin du package
+\endinput

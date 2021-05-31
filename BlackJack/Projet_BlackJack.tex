@@ -1,0 +1,62 @@
+%Partie essentielle
+\documentclass[a4paper,12pt]{report} %style de document
+\usepackage[utf8]{inputenc} %encodage des caractères
+\usepackage[french]{babel} %paquet de langue français
+\usepackage[T1]{fontenc} %encodage de la police
+\usepackage[top=2cm,bottom=2cm,left=3cm,right=2cm]{geometry} %marges
+
+\usepackage{multicol}
+
+\usepackage{rotating}
+\usepackage{pifont}
+
+\usepackage[most]{tcolorbox}
+
+%Autre 
+	% Langage de programation : code
+	% Peudo-code Algebre : algo
+	% Math pour la deraction facile en CM : mt
+	% tkiz : tk
+		%\usepackage[code,algo,theo,tk,mt]{testStyle.sty}
+		\input{./style/testStyle.tex} %Travaille sur les documents 
+	% theorem
+		\input{./style/styleTheo.tex}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\input{./style/style.tex}
+\input{./style/titl.tex}
+
+	%----------------------------------
+	%page de garde
+	%----------------------------------
+	 %% travail sur les page de grade et de style
+	 %% \maketitle	
+	 %% \input{./titre/title.tex} 
+	\input{./titre/titre.tex}
+	\makeatletter
+	
+	%------------------------------
+	%sommaire
+	
+	\begin{document} %début du document
+		
+		
+		
+	%------------------------------
+	
+	\tableofcontents %table des matier automatique
+	\thispagestyle{empty}
+	\setcounter{page}{0}
+	\newpage %saut de page
+	
+	
+	%------------------------------
+	%page
+	%------------------------------	
+	\part{Introduction}
+	\input{./Parties/Intro.tex}
+	%\part{DM Partie 1}
+	%\input{./DM/Partie1.tex}
+
+\end{document}
