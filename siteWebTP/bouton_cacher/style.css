@@ -1,0 +1,165 @@
+:root
+{
+    --text-primary  :   #000000;
+    --text-secondary:   #ffffff;
+    --bg-primary    :   #23232e;
+    --bg-secondary  :   #141418;
+    --porte-fond    :   #ef4f4f;
+    --porte-gauche  :   #eceaea;
+    --porte-droit   :   #d6d3d3;
+}
+
+/*fond noir + centre de la page le bouton*/
+body {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-primary);
+}
+
+/*bouton en general*/
+.container {
+    /*position du bouton*/
+    position: relative;
+    /*la disposition*/
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    /*longeur*/
+    width: 400px;
+    /*hauteur*/
+    height: 75px;
+    /*arondir les bord du bouton*/
+    border-radius: 100px;
+    overflow: hidden;
+
+}
+
+/*bouton gauche <--, bouton droite -->*/
+.container:before , .container:after 
+{
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    /*longeur des portes*/
+    width: 50%;
+    /*hauteur des portes*/
+    height: 100%;
+    /*effet de porte*/
+    transition: 0.25s linear;
+    /*cacher les icone derier les porte*/
+    z-index: 1;
+}
+
+/*bouton gauche <--*/
+.container:before {
+    content: '';
+    left: 0;
+    justify-content: flex-end;
+    background-color: var(--porte-gauche);
+}
+
+/*bouton droite -->*/
+.container:after {
+    content: '';
+    right: 0;
+    justify-content: flex-start;
+    background-color: var(--porte-droit);
+}
+
+/*fond du bouton en 2eme plan*/
+.container:hover {
+    background-color: var(--porte-fond);
+}
+
+/*icone du fond plan*/
+.container:hover span {
+    opacity: 0.5;
+    z-index: -3;
+}
+
+/* transition des deux portes */
+
+    /*gauche*/
+    .container:hover::before {
+        opacity: 0.5;
+        transform: translateY(-100%);
+    }
+
+    /*droit*/
+    .container:hover::after {
+        opacity: 0.5;
+        transform: translateY(100%);
+    }
+
+/*text dans le bouton*/
+.container span {
+    /*pas de soute de ligne*/
+        position: absolute;
+    /*tout en haut a gauche (position absolu)*/
+        top: 0;
+        left: 0;
+    /*centre le text dans le bouton*/
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+
+    color: var(--text-primary);
+
+    /*POLICE*/
+        text-transform: uppercase;
+        font-family: 'Fira Mono', monospace;
+
+    /*grosseur du text*/
+        font-size: 35px;
+        letter-spacing: 2px;
+    /*Gras*/
+        font-weight: 700;
+
+    opacity: 1;
+    transition: opacity 0.25s;
+    z-index: 2;
+}
+
+/*couleur seconder des icone*/
+.fa-primary
+{ 
+    color: var(--text-secondary);
+}
+
+.container .icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /*place dans le bouton*/
+    width: 100%;
+    height: 100%;
+
+    font-size: 25px;
+    text-decoration: none;
+    transition: 0.25s;
+}
+
+/*fond quand on passe le curseur*/
+.container .icon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.container .icon:hover i {
+    animation: animate 0.4s linear;
+}
+
+@keyframes animate {
+    40%  {  transform: scale(1.4); }
+    60%  {  transform: scale(0.8); }
+    80%  {  transform: scale(1.2); }
+    100% {  transform: scale(1);   }
+}
