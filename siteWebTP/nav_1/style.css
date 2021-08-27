@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --bg-fond-w: #fff;
+    --bg-fond-b: #333;
+    --bg-fond-nav-1: #949be9;
+    --bg-fond-nav-2: #ff4d89;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--bg-fond-w);
+}
+
+.navigateur {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    bottom: 20px;
+    width: 70px; 
+    border-radius: 10px;
+    box-sizing: initial;
+    border-left: 5px solid var(--bg-fond-nav-1);
+
+    background: var(--bg-fond-nav-1);
+    transition: width 0.5s;
+
+    overflow-x: hidden;
+}
+
+.navigateur.active {
+    width: 300px;
+}
+
+.navigateur ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 5px;
+    padding-top: 40px;
+}
+
+.navigateur ul li {
+   position: relative;
+   list-style: none;
+   width: 100%;
+   border-top-left-radius: 20px;
+   border-bottom-left-radius: 20px;
+}
+
+.navigateur ul li.active {
+   background: var(--bg-fond-w);
+}
+
+.navigateur ul li b:nth-child(1) {
+    position: absolute;
+    top: -20px;
+    height: 20px;
+    width: 100%;
+    background: var(--bg-fond-w);
+    display: none;
+}
+
+.navigateur ul li b:nth-child(1)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom-right-radius: 20px;
+    background: var(--bg-fond-nav-1)
+}
+
+.navigateur ul li.active b:nth-child(1),
+.navigateur ul li.active b:nth-child(2) {
+    display: block;
+}
+
+.navigateur ul li b:nth-child(2) {
+    position: absolute;
+    bottom: -20px;
+    height: 20px;
+    width: 100%;
+    background: var(--bg-fond-w);
+    display: none;
+}
+
+.navigateur ul li b:nth-child(2)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 20px;
+    background: var(--bg-fond-nav-1)
+
+}
+
+.navigateur ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--bg-fond-w);
+}
+
+.navigateur ul li.active a{
+    color: var(--bg-fond-b);
+}
+
+.navigateur ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 20%;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+
+/*icon image*/
+.navigateur ul li a .icon ion-icon {
+    /*grossir l'image*/
+    font-size: 1.9em; 
+}
+
+/*Modification titre*/
+.navigateur ul li a .title{
+    position: relative;
+    display: none;
+    padding-left: 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: normal;
+}
+
+.navigateur.active ul li a .title{
+    display: block;
+}
+
+/* Parti 2 */
+
+.toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: var(--bg-fond-nav-1);
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toggle.active {
+    background: var(--bg-fond-nav-2);
+}
+
+.toggle ion-icon {
+    position: absolute;
+    color: var(--bg-fond-w);
+    font-size: 34px;
+    display: none;
+}
+/*close*/
+.toggle ion-icon.icone-open,
+.toggle.active ion-icon.icone-close{
+    display: block;
+}
+
+.toggle ion-icon.icone-close,
+.toggle.active ion-icon.icone-open{
+    display: none;
+}
